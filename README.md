@@ -62,7 +62,7 @@ map_steam_port: 27029 <-- Steam query port to find the map in steam servers
 ```
 
 # Installation and Stack Deploy Steps
-## Install git on Ubuntu Server
+## Install git & ansible on Ubuntu Server
 
 ```bash
 sudo apt-get install -y git ansible
