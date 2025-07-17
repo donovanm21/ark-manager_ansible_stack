@@ -155,6 +155,19 @@ Run this as the ark user following on from the above command. This will show the
 arkmanager status @Ragnarok
 ```
 
+## Helper Scripts
+The system role will install a bunch of custom helper scripts that will keep your server up to date and maintenance free. 
+
+- The server will check for ARK updates and mod updates every hour and if an update is available it will grace fully shutdown all maps, install updates and start maps back up. No more waiting for an admin to run update :D
+- You will see a crontab install under the root user. This includes a bunch of tasks
+	- Daily server restarts at 4:00am (This can be adjusted in the crontab)
+	- Dino wipes twice a day (every 12 hours)
+	- Genesis2 void glitch fix (daily)
+	- Cluster and Map data backups (daily)
+	- Proactive player notification via RCON for updates and restarts
+
+These are quality of life additions I personally put together to ensure the highest player experience on all the servers I've managed and deployed. This provided the best balance for me and so feel free to tweak these to your needs and requirements. 
+
 ### References
 Some reference links for full guides and how to using the tools in this repo.
 
