@@ -82,36 +82,21 @@ roles/maps/files/ini_files/Game.ini
 Below is all the current rates and multipliers as part of the default configuration
 
 ```
-Difficulty
-1.0
-XP Multiplier
-1.0
-Taming Speed
-2.0
-Maturation Time
-2.5
-Cuddle Time Interval
-0.75
-Mating Interval
-0.25
-Egg Hatch
-2.5
-Harvest Multiplier
-2
-Base Character Weight
-1000
-Tribe Size
-8
-Alliances
-4
-Tribes per Alliance
-4
-Max Wild Dino Level
-150
-Max Tek Dino Level
-180
-Nanny Imprint
-100%
+Difficulty 1.0
+XP Multiplier 1.0
+Taming Speed 2.0
+Maturation Time 2.5
+Cuddle Time Interval 0.75
+Mating Interval 0.25
+Egg Hatch 2.5
+Harvest Multiplier 2
+Base Character Weight 1000
+Tribe Size 8
+Alliances 4
+Tribes per Alliance 4
+Max Wild Dino Level 150
+Max Tek Dino Level 180
+Nanny Imprint 100%
 ```
 # Installation and Stack Deploy Steps
 ## Install git & ansible on Ubuntu server 
