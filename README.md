@@ -61,6 +61,58 @@ map_ark_port: 7791 <-- Data port for map
 map_steam_port: 27029 <-- Steam query port to find the map in steam servers
 ```
 
+## GameUserSetting.ini & Game.ini
+With the stack you will find some boilerplate configuration that is includes for each map. 
+
+### GameUserSertting.ini for each map
+You can edit this configuration and replace it with your own for each map, this will deploy the settings you have set when you deploy the stack automatically for each map.
+
+```yaml
+roles/maps/files/ini_files/[MAP_NAME]/GameUserSettings.ini
+```
+
+### Game.ini for all map
+For this deployment, using the same Game.ini for all maps works the best and so the configuration you add to this file will be used across all maps.
+
+```yaml
+roles/maps/files/ini_files/Game.ini
+```
+
+## Default Rates
+Below is all the current rates and multipliers as part of the default configuration
+
+```
+Difficulty
+1.0
+XP Multiplier
+1.0
+Taming Speed
+2.0
+Maturation Time
+2.5
+Cuddle Time Interval
+0.75
+Mating Interval
+0.25
+Egg Hatch
+2.5
+Harvest Multiplier
+2
+Base Character Weight
+1000
+Tribe Size
+8
+Alliances
+4
+Tribes per Alliance
+4
+Max Wild Dino Level
+150
+Max Tek Dino Level
+180
+Nanny Imprint
+100%
+```
 # Installation and Stack Deploy Steps
 ## Install git & ansible on Ubuntu server 
 
