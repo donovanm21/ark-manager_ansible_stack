@@ -62,7 +62,7 @@ map_steam_port: 27029 <-- Steam query port to find the map in steam servers
 ```
 
 # Installation and Stack Deploy Steps
-## Install git & ansible on Ubuntu Server
+## Install git & ansible on Ubuntu server 
 
 ```bash
 sudo apt-get install -y git ansible
@@ -114,6 +114,40 @@ su ark
 arkmanager start @Ragnarok
 ```
 
+## Network Port Validation
+Check to see which ports are open on the server for each map. The example output is for a local only test server.
+
+```bash
+# This show all the open & listening ports
+netstat -tulpn
+```
+
+```bash
+#Example Output
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 192.168.1.198:32332     0.0.0.0:*               LISTEN      1629734/ShooterGame   <-- Ragnarok RCON Port
+tcp        0      0 192.168.1.198:32334     0.0.0.0:*               LISTEN      1629743/ShooterGame
+tcp        0      0 192.168.1.198:32336     0.0.0.0:*               LISTEN      1629754/ShooterGame
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      773/systemd-resolve
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      882/sshd: /usr/sbin
+tcp        0      0 192.168.1.198:32344     0.0.0.0:*               LISTEN      1629764/ShooterGame
+tcp6       0      0 :::22                   :::*                    LISTEN      882/sshd: /usr/sbin
+udp        0      0 192.168.1.198:27017     0.0.0.0:*                           1629734/ShooterGame   <-- Ragnarok Steam Query port
+udp        0      0 192.168.1.198:27019     0.0.0.0:*                           1629743/ShooterGame
+udp        0      0 192.168.1.198:27021     0.0.0.0:*                           1629754/ShooterGame
+udp        0      0 192.168.1.198:27029     0.0.0.0:*                           1629764/ShooterGame
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           773/systemd-resolve
+udp        0      0 192.168.1.198:68        0.0.0.0:*                           771/systemd-network
+udp        0      0 192.168.1.198:7779      0.0.0.0:*                           1629734/ShooterGame   <-- Ragnarok Server Data Port
+udp        0      0 192.168.1.198:7780      0.0.0.0:*                           1629734/ShooterGame   <-- Ragnarok Server Data Port
+udp        0      0 192.168.1.198:7781      0.0.0.0:*                           1629743/ShooterGame
+udp        0      0 192.168.1.198:7782      0.0.0.0:*                           1629743/ShooterGame
+udp        0      0 192.168.1.198:7783      0.0.0.0:*                           1629754/ShooterGame
+udp        0      0 192.168.1.198:7784      0.0.0.0:*                           1629754/ShooterGame
+udp        0      0 192.168.1.198:7791      0.0.0.0:*                           1629764/ShooterGame
+udp        0      0 192.168.1.198:7792      0.0.0.0:*                           1629764/ShooterGame
+```
 ## Check Map Status
 Run this as the ark user following on from the above command. This will show the current status of the map on the server
 
