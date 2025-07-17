@@ -1,0 +1,74 @@
+---
+# Create the files directory
+- name: Create the /etc/arkmanager/files directory
+  file:
+    path: /etc/arkmanager/files
+    state: directory
+    owner: ark
+    mode: '0755'
+
+# Create the SaveGames directory
+- name: Create the /home/ark/ARK/ShooterGame/Saved/SaveGames directory
+  file:
+    path: /home/ark/ARK/ShooterGame/Saved/SaveGames
+    state: directory
+    owner: ark
+    mode: '0755'
+
+# Setup map folders
+- name: Create the directories for maps
+  file:
+    path: /etc/arkmanager/files/{{ item.map_name }}
+    state: directory
+    owner: ark
+    mode: '0755'
+  with_items: "{{ maps }}"
+
+# Copy the instance config file for maps
+- name: Copy map instance file
+  template:
+    src: instance.cfg.j2
+    dest: /etc/arkmanager/instances/{{ item.map_name }}.cfg
+    owner: ark
+    mode: '0644'
+  with_items: "{{ maps }}"
+
+# Copy GameUSerSettings.ini
+- name: Copy the GameUsersSetting.ini file
+  copy:
+    src: ini_files/{{ item.map_name }}/GameUserSettings.ini
+    dest: /etc/arkmanager/files/{{ item.map_name }}/GameUserSettings.ini
+    owner: ark
+    mode: '0644'
+  notify: restart map
+  with_items: "{{ maps }}"
+
+# Copy Game.ini
+- name: Copy the Game.ini file
+  copy:
+    src: ini_files/Game.ini
+    dest: /etc/arkmanager/files/Game.ini
+    owner: ark
+    mode: '0644'
+  notify: restart map
+
+# Create the Ark Admins SteamID file
+- name: Create the ark admin file
+  file:
+    path: /home/ark/ARK/ShooterGame/Saved/AllowedCheaterSteamIDs.txt
+    state: touch
+    mode: '0644'
+
+# Add SteamIDs for ark admins
+- name: Add SteamIDs for ark admins
+  lineinfile:
+    dest: /home/ark/ARK/ShooterGame/Saved/AllowedCheaterSteamIDs.txt
+    line: '{{ item }}'
+    state: present
+  with_items: "{{ admins }}"
+
+# Install enabled mods
+- name: Install and update enabled mods
+  command: arkmanager update --update-mods @{{ item.map_name }}
+  notify: restart map
+  with_items: "{{ maps }}"

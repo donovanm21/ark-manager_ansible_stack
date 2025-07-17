@@ -1,0 +1,117 @@
+---
+# gameservers host group vars file
+ark_MultiHome: "SERVER_IP_HERE"
+maps:
+  # - map_name_ark: "ScorchedEarth_P"
+  #   map_name: "ScorchedEarth"
+  #   map_rcon_port: 32330
+  #   map_ark_port: 7777
+  #   map_steam_port: 27015
+  #   map_admin_password: "ADMIN_PASSWORD_HERE"
+  #   map_max_players: 25
+  #   map_mods_enabled: "731604991,924619115,1404697612,1260983937,1609138312,2044129379,889745138"
+  #   cluster_name: "CLUSTER_NAME_HERE"
+  - map_name_ark: "Ragnarok"
+    map_name: "Ragnarok"
+    map_rcon_port: 32332
+    map_ark_port: 7779
+    map_steam_port: 27017
+    map_admin_password: "ADMIN_PASSWORD_HERE"
+    map_max_players: 25
+    map_mods_enabled: "731604991,924619115,1404697612,1260983937,1609138312,2044129379,889745138"
+    cluster_name: "CLUSTER_NAME_HERE"
+  # - map_name_ark: "Aberration_P"
+  #   map_name: "Aberration"
+  #   map_rcon_port: 32334,
+  #   map_ark_port: 7781
+  #   map_steam_port: 27019
+  #   map_admin_password: "ADMIN_PASSWORD_HERE"
+  #   map_max_players: 25
+  #   map_mods_enabled: "731604991,924619115,1404697612,1260983937,1609138312,2044129379,889745138"
+  #   cluster_name: "CLUSTER_NAME_HERE"
+  # - map_name_ark: "Genesis"
+  #   map_name: "Genesis"
+  #   map_rcon_port: 32336
+  #   map_ark_port: 7783
+  #   map_steam_port: 27021
+  #   map_admin_password: "ADMIN_PASSWORD_HERE"
+  #   map_max_players: 25
+  #   map_mods_enabled: "731604991,924619115,1404697612,1260983937,1609138312,2044129379,889745138"
+  #   cluster_name: "CLUSTER_NAME_HERE"
+  # - map_name_ark: "Extinction"
+  #   map_name: "Extinction"
+  #   map_rcon_port: 32338
+  #   map_ark_port: 7785
+  #   map_steam_port: 27023
+  #   map_admin_password: "ADMIN_PASSWORD_HERE"
+  #   map_max_players: 25
+  #   map_mods_enabled: "731604991,924619115,1404697612,1260983937,1609138312,2044129379,889745138"
+  #   cluster_name: "CLUSTER_NAME_HERE"
+  # - map_name_ark: "CrystalIsles"
+  #   map_name: "CrystalIsles"
+  #   map_rcon_port: 32340
+  #   map_ark_port: 7787
+  #   map_steam_port: 27025
+  #   map_admin_password: "ADMIN_PASSWORD_HERE"
+  #   map_max_players: 25
+  #   map_mods_enabled: "731604991,924619115,1404697612,1260983937,1609138312,2044129379,889745138"
+  #   cluster_name: "CLUSTER_NAME_HERE"
+  # - map_name_ark: "Valguero_P"
+  #   map_name: "Valguero"
+  #   map_rcon_port: 32342
+  #   map_ark_port: 7789
+  #   map_steam_port: 27027
+  #   map_admin_password: "ADMIN_PASSWORD_HERE"
+  #   map_max_players: 25
+  #   map_mods_enabled: "731604991,924619115,1404697612,1260983937,1609138312,2044129379,889745138"
+  #   cluster_name: "CLUSTER_NAME_HERE"
+  - map_name_ark: "TheIsland"
+    map_name: "TheIsland"
+    map_rcon_port: 32344
+    map_ark_port: 7791
+    map_steam_port: 27029
+    map_admin_password: "ADMIN_PASSWORD_HERE"
+    map_max_players: 25
+    map_mods_enabled: "731604991,924619115,1404697612,1260983937,1609138312,2044129379,889745138"
+    cluster_name: "CLUSTER_NAME_HERE"
+  # - map_name_ark: "TheCenter"
+  #   map_name: "TheCenter"
+  #   map_rcon_port: 32346
+  #   map_ark_port: 7793
+  #   map_steam_port: 27031
+  #   map_admin_password: "ADMIN_PASSWORD_HERE"
+  #   map_max_players: 25
+  #   map_mods_enabled: "731604991,924619115,1404697612,1260983937,1609138312,2044129379,889745138"
+  #   cluster_name: "CLUSTER_NAME_HERE"
+  # - map_name_ark: "Gen2"
+  #   map_name: "Genesis2"
+  #   map_rcon_port: 32348
+  #   map_ark_port: 7795
+  #   map_steam_port: 27033
+  #   map_admin_password: "ADMIN_PASSWORD_HERE"
+  #   map_max_players: 25
+  #   map_mods_enabled: "731604991,924619115,1404697612,1260983937,1609138312,2044129379,889745138"
+  #   cluster_name: "CLUSTER_NAME_HERE"
+  # - map_name_ark: "LostIsland"
+  #   map_name: "LostIsland"
+  #   map_rcon_port: 32350
+  #   map_ark_port: 7797
+  #   map_steam_port: 27035
+  #   map_admin_password: "ADMIN_PASSWORD_HERE"
+  #   map_max_players: 25
+  #   map_mods_enabled: "731604991,924619115,1404697612,1260983937,1609138312,2044129379,889745138"
+  #   cluster_name: "CLUSTER_NAME_HERE"
+  # - map_name_ark: "Fjordur"
+  #   map_name: "Fjordur"
+  #   map_rcon_port: 32352
+  #   map_ark_port: 7799
+  #   map_steam_port: 27037
+  #   map_admin_password: "ADMIN_PASSWORD_HERE"
+  #   map_max_players: 25
+  #   map_mods_enabled: "731604991,924619115,1404697612,1260983937,1609138312,2044129379,889745138"
+  #   cluster_name: "CLUSTER_NAME_HERE"
+
+# SteamIDs for Ark admins on cluster
+admins:
+  - 55566667777888999
+  - 11112222233333444

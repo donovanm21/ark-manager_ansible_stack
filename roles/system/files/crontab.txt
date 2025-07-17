@@ -1,0 +1,60 @@
+# Start Servers on reboot
+@reboot /bin/sh /home/ark/ark_map_start.sh
+#
+## Ark auto update checker
+# System updates
+59 * * * * /bin/sh /home/ark/ark_update_checker.sh
+# Mod updates
+30 * * * * /bin/sh /home/ark/ark_mod_checker.sh
+
+## Genesis 2 Void Fix
+30 14 * * * /usr/local/bin/arkmanager rconcmd 'settimeofday 23:58:00' @Genesis2
+32 14 * * * /usr/local/bin/arkmanager rconcmd 'settimeofday 01:28:00' @Genesis2
+
+## Server Updates
+#
+30 3 * * * /usr/local/bin/arkmanager broadcast "Server Restart & Update in 30mins" @all
+45 3 * * * /usr/local/bin/arkmanager broadcast "Server Restart & Update in 15mins" @all
+55 3 * * * /usr/local/bin/arkmanager broadcast "Server Restart & Update in 5mins" @all
+#
+0 4 * * * /usr/local/bin/arkmanager stop @all
+#
+# Backup Cluster Files
+2 4 * * * tar -cvf /home/ark/ARK-Backups/cluster_files_$(date "+%Y-%m-%d").tar /home/ark/ARK/ShooterGame/Saved/clusters/
+#
+# Full Backup
+5 4 * * * /usr/local/bin/arkmanager backup @all
+#
+7 4 * * * /usr/local/bin/arkmanager update
+10 4 * * * /usr/local/bin/arkmanager update --update-mods
+#
+## Temp no start
+14 4 * * * /usr/local/bin/arkmanager start @Ragnarok
+16 4 * * * /usr/local/bin/arkmanager start @Extinction
+17 4 * * * /usr/local/bin/arkmanager start @Aberration
+18 4 * * * /usr/local/bin/arkmanager start @Genesis2
+19 4 * * * /usr/local/bin/arkmanager start @CrystalIsles
+20 4 * * * /usr/local/bin/arkmanager start @LostIsland
+21 4 * * * /usr/local/bin/arkmanager start @Valguero
+29 4 * * * /usr/local/bin/arkmanager start @TheIsland
+32 4 * * * /usr/local/bin/arkmanager start @ScorchedEarth
+35 4 * * * /usr/local/bin/arkmanager start @Genesis
+38 4 * * * /usr/local/bin/arkmanager start @TheCenter
+41 4 * * * /usr/local/bin/arkmanager start @Fjordur
+
+## Dino Wipe Messages
+#
+30 11 * * * /usr/local/bin/arkmanager broadcast "Dino Wipe in 30mins" @all
+45 11 * * * /usr/local/bin/arkmanager broadcast "Dino Wipe in 15mins" @all
+55 11 * * * /usr/local/bin/arkmanager broadcast "Dino Wipe in 5mins" @all
+#
+30 23 * * * /usr/local/bin/arkmanager broadcast "Dino Wipe in 30mins" @all
+45 23 * * * /usr/local/bin/arkmanager broadcast "Dino Wipe in 15mins" @all
+55 23 * * * /usr/local/bin/arkmanager broadcast "Dino Wipe in 5mins" @all
+
+## 12:00 Dino Wipe
+0 12 * * * /bin/sh /home/ark/ark_rcon_cmd.sh
+
+## 00:00 Dino Wipe
+0 0 * * * /bin/sh /home/ark/ark_rcon_cmd.sh
+

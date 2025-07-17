@@ -1,0 +1,5 @@
+[gameservers]
+localhost
+
+[gameservers:vars]
+ansible_user=root

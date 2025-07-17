@@ -1,0 +1,47 @@
+---
+
+# Copy mod checker to the host
+- name: Copy the mod checker script to the host
+  copy:
+    src: scripts/ark_mod_checker.sh
+    dest: /home/ark/ark_mod_checker.sh
+    owner: ark
+    mode: '0755'
+
+# Copy update checker to the host
+- name: Copy the update checker script to the host
+  copy:
+    src: scripts/ark_update_checker.sh
+    dest: /home/ark/ark_update_checker.sh
+    owner: ark
+    mode: '0755'
+
+# Copy the system update script
+- name: Copy the system update script
+  template:
+    src: ark_system_update.sh.j2
+    dest: /home/ark/ark_system_update.sh
+    owner: ark
+    mode: '0755'
+  with_items: "{{ maps }}"
+
+# Copy the system startup script
+- name: Copy the system startup script
+  template:
+    src: ark_map_start.sh.j2
+    dest: /home/ark/ark_map_start.sh
+    owner: ark
+    mode: '0755'
+  with_items: "{{ maps }}"
+
+# Copy the system cron file
+- name: Copy the system cron file for import
+  copy:
+    src: crontab.txt
+    dest: /home/ark/crontab.txt
+    owner: ark
+    mode: '0644'
+
+# Import the crontab file.
+- name: Import the crontab file
+  command: crontab -u ark /home/ark/crontab.txt
